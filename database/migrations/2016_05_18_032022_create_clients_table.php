@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAccountsRTable extends Migration
+class CreateClientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class CreateAccountsRTable extends Migration
      */
     public function up()
     {
-        Schema::create('AccountsR', function (Blueprint $table) {
-            $table->int('Age');
-            $table->string('Balance');
-            $table->int('EstUncolPerc');
-            $table->int('EstUncolBal');
+        Schema::create('clients', function(Blueprint $table)//
+        {
+            $table->increments('UserID');
+            $table->string('UserName');
+            $table->string('BusName');
         });
     }
 
@@ -27,6 +27,6 @@ class CreateAccountsRTable extends Migration
      */
     public function down()
     {
-        Schema::drop('AccountsR');
+        Schema::drop('clients');
     }
 }

@@ -11,18 +11,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
-        DB::table('client') -> insert ([
-        	'UserID' => auto_increment,
-        	'UserName' => str_random(10),
-        	'BusName' => str_random (10),
-        	]);
+        $this->call(ClientsTableSeeder::class);
+       
+        $this->command->info('Clients table seeded!');
 
-        DB::table('AccountsR') -> ([
-        	'Age' => str_random(5),
-        	'Balance' => str_random(5),
-        	'EstUncolPerc' => str_random (1),
-        	'EstUncolBal' => str_random (4),
-        	]);
+        $this->call(AccountsRTableSeeder::class);
+
+        $this->command->info('AccountsR table seeded!');
+
     }
 }

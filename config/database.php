@@ -47,13 +47,14 @@ return [
     'connections' => [
 
 
+
         'mysql' => [
             'driver' => 'mysql',
-            'host' => 'localhost',
-            'port' => '33060',
-            'database' => 'homestead',
-            'username' => 'homestead',
-            'password' => 'secret',
+            'host' => env('DB_HOST', 'localhost'),
+            'port' => env('DB_PORT', '33060'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
